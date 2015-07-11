@@ -58,21 +58,49 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $query_builder variables lets you determine whether or not to load
 | the query builder class.
 */
+if($_SERVER['SERVER_NAME'] == '127.0.0.1')
+{
+	$active_group = 'debug';
+}else{
 
-$active_group = 'default';
+	$active_group = 'production';
+}
+
 $query_builder = TRUE;
 
-$db['default'] = array(
+$db['debug'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'root',
-	'password' => '150683',
+	'password' => '',
 	'database' => 'ogs_stats',
 	'dbdriver' => 'mysqli',
-	'dbprefix' => '',
+	'dbprefix' => 'ostats_',
 	'pconnect' => FALSE,
 	'db_debug' => TRUE,
 	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE
+);
+
+$db['production'] = array(
+	'dsn'	=> '',
+	'hostname' => 'mysql51-62.perso',
+	'username' => 'darkcityperso',
+	'password' => '***REMOVED***',
+	'database' => 'darkcityperso',
+	'dbdriver' => 'mysqli',
+	'dbprefix' => 'ostats_',
+	'pconnect' => FALSE,
+	'db_debug' => FALSE,
+	'cache_on' => TRUE,
 	'cachedir' => '',
 	'char_set' => 'utf8',
 	'dbcollat' => 'utf8_general_ci',

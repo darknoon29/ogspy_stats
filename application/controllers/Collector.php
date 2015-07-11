@@ -21,7 +21,7 @@ class Collector extends CI_Controller {
 	public function index()
 	{
 
-        $ogspy_index = $this->input->get('ogspy_index', TRUE);
+        $ogspy_key = $this->input->get('ogspy_key', TRUE);
         $version = $this->input->get('version', TRUE);
         $last_seen = $this->input->get('last_seen', TRUE);
         $db_size = $this->input->get('db_size', TRUE);
@@ -29,7 +29,7 @@ class Collector extends CI_Controller {
         $Xtense_Chrome  = $this->input->get('xtense_chrome', TRUE);
         $Xtense_GM  = $this->input->get('xtense_gm', TRUE);
 
-        echo($ogspy_index);
-		//$this->load->view('welcome_message');
+        //echo($ogspy_index);
+		$this->load->view('welcome_message');
 	}
 }
