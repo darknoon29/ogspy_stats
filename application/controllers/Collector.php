@@ -20,16 +20,18 @@ class Collector extends CI_Controller {
 	 */
 	public function index()
 	{
-
-        $ogspy_key = $this->input->get('ogspy_key', TRUE);
+        $ogspy_key = $this->input->get('server_key', TRUE);
+        $ogspy_since = $this->input->get('server_since', TRUE);
         $version = $this->input->get('version', TRUE);
-        $last_seen = $this->input->get('last_seen', TRUE);
+        $nb_users = $this->input->get('nb_users', TRUE);
         $db_size = $this->input->get('db_size', TRUE);
-        $Xtense_Firefox = $this->input->get('xtense_firefox', TRUE);
-        $Xtense_Chrome  = $this->input->get('xtense_chrome', TRUE);
-        $Xtense_GM  = $this->input->get('xtense_gm', TRUE);
+        $php_version = $this->input->get('php_version', TRUE);
+        $og_uni = $this->input->get('og_uni', TRUE);
+        $og_pays = $this->input->get('og_pays', TRUE);
+
+        $this->ogspystats_model->insert_entry($ogspy_key, $ogspy_since,$version,$nb_users,$db_size,$php_version,$og_uni,$og_pays);
 
         //echo($ogspy_index);
-		$this->load->view('welcome_message');
+		//$this->load->view('welcome_message');
 	}
 }
