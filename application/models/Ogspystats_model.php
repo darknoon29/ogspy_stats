@@ -53,6 +53,7 @@ class Ogspystats_model extends CI_Model {
             'pays' => $og_pays,
         );
 
+		$this->db->where('ogspy_key', $ogspy_key);
         $str = $this->db->update('ogspy', $data);
 
     }
