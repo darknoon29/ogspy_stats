@@ -61,7 +61,7 @@ class Ogspystats_model extends CI_Model {
     public function is_server_present($ogspy_key){
 
         log_message('debug','Enter in function is_server_present: '. $ogspy_key);
-        $this->db->like('ogspy_key', $ogspy_key);
+        $this->db->where('ogspy_key', $ogspy_key);
         $this->db->from('ogspy');
         $results = $this->db->count_all_results();
         return $results;
