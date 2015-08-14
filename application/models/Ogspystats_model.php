@@ -22,6 +22,28 @@ class Ogspystats_model extends CI_Model {
         return $query->result();
     }
 
+    public function get_total_servers(){
+
+        $total_servers = $this->db->count_all('ogspy');
+        return($total_servers);
+    }
+
+    public function get_total_users(){
+
+        $total_users = 0;
+        $query = $this->db->get('ogspy'); ;
+
+        foreach ($query->result() as $row)
+        {
+
+            $total_users += $row->nb_users;
+        }
+
+        return($total_users);
+    }
+
+
+
     public function insert_entry($ogspy_key, $version,$ogspy_since,$nb_users,$db_size,$php_version,$og_uni,$og_pays)
     {
         log_message('debug','Enter in function insert_entry');

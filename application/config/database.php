@@ -63,8 +63,8 @@ if($_SERVER['SERVER_NAME'] == '127.0.0.1')
 	$active_group = 'debug';
 	log_message('info',"Utilisation de la base de données Localhost");
 }else{
-
 	$active_group = 'production';
+    log_message('info',"Utilisation de la base de données Production");
 }
 
 $query_builder = TRUE;
@@ -101,7 +101,7 @@ $db['production'] = array(
 	'dbprefix' => 'ostats_',
 	'pconnect' => FALSE,
 	'db_debug' => FALSE,
-	'cache_on' => TRUE,
+	'cache_on' => FALSE,
 	'cachedir' => '',
 	'char_set' => 'utf8',
 	'dbcollat' => 'utf8_general_ci',

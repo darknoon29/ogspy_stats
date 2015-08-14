@@ -20,6 +20,16 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+
+
+        $ogspy_users = $this->ogspystats_model->get_total_users();
+        $ogspy_servers = $this->ogspystats_model->get_total_servers();
+
+        $data = array(
+            'nb_users' => $ogspy_users,
+            'nb_servers' => $ogspy_servers
+        );
+
+        $this->load->view('welcome_message', $data);
 	}
 }
