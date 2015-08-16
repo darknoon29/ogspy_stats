@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter</title>
+	<title>OGSteam Stats</title>
 	<link rel="stylesheet" href="./mdl/material.min.css">
 	<script src="./mdl/material.min.js"></script>
 	<link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
@@ -43,34 +43,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
             <!-- Title -->
-            <span class="mdl-layout-title">Welcome to CodeIgniter!</span>
+            <span class="mdl-layout-title">Le site de statistiques OGSpy</span>
         </div>
         <!-- Tabs -->
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-            <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Tab 1</a>
-            <a href="#fixed-tab-2" class="mdl-layout__tab">Tab 2</a>
-            <a href="#fixed-tab-3" class="mdl-layout__tab">Tab 3</a>
+            <a href="#fixed-tab-1" class="mdl-layout__tab is-active">OGSpy</a>
+            <a href="#fixed-tab-2" class="mdl-layout__tab">OGSpy Modules</a>
+            <a href="#fixed-tab-3" class="mdl-layout__tab">A Propos</a>
         </div>
     </header>
-    <div class="mdl-layout__drawer">
+<!--    <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Title</span>
-    </div>
+    </div>-->
     <main class="mdl-layout__content">
         <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
             <div class="page-content">
+                <p>Voici les dernières statistiques d'utilisation d'OGSpy:</p>
                 <code>Nombre d'utilisateurs: <?php echo $nb_users;?></code>
                 <code>Nombre de serveurs: <?php echo $nb_servers;?></code>
-                <p>If you would like to edit this page you'll find it located at:</p>
-                <code>application/views/welcome_message.php</code>
 
-                <p>The corresponding controller for this page is found at:</p>
-                <code>application/controllers/Welcome.php</code>
-
-                <p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p></div>
-            <p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
+            <p class="footer">Page générée en <strong>{elapsed_time}</strong> secondes. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
         </section>
         <section class="mdl-layout__tab-panel" id="fixed-tab-2">
-            <div class="page-content"><!-- Your content goes here --></div>
+            <div class="page-content">
+                <p>Section à venir</p>
+            </div>
         </section>
         <section class="mdl-layout__tab-panel" id="fixed-tab-3">
             <div class="page-content"><!-- Your content goes here --></div>
