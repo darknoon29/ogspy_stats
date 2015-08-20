@@ -22,6 +22,51 @@ class Ogspystats_model extends CI_Model {
         return $query->result();
     }
 
+    public function get_php_versions(){
+        $query = $this->db->select('php_version')->get('ogspy');
+
+        foreach ($query->result() as $row) {
+
+            $php_vresult[] = $row->php_version;
+        }
+        $phpversions = array_count_values($php_vresult);
+        return($phpversions);
+    }
+
+    public function get_ogspy_versions(){
+        $query = $this->db->select('version')->get('ogspy');
+
+        foreach ($query->result() as $row) {
+
+            $ogspy_vresult[] = $row->version;
+        }
+        $ogspyversions = array_count_values($ogspy_vresult);
+        return($ogspyversions);
+    }
+
+    public function get_uni_number(){
+        $query = $this->db->select('uni')->get('ogspy');
+
+        foreach ($query->result() as $row) {
+
+            $uni_vresult[] = $row->uni;
+        }
+        $uni_number = array_count_values($uni_vresult);
+        return($uni_number);
+    }
+
+    public function get_uni_pays(){
+        $query = $this->db->select('pays')->get('ogspy');
+
+        foreach ($query->result() as $row) {
+
+            $pays_vresult[] = $row->pays;
+        }
+        $ogspy_pays = array_count_values($pays_vresult);
+        return($ogspy_pays);
+    }
+
+
     public function get_total_servers(){
 
         $total_servers = $this->db->count_all('ogspy');
@@ -31,14 +76,13 @@ class Ogspystats_model extends CI_Model {
     public function get_total_users(){
 
         $total_users = 0;
-        $query = $this->db->get('ogspy'); ;
+        $query = $this->db->get('ogspy');
 
         foreach ($query->result() as $row)
         {
 
             $total_users += $row->nb_users;
         }
-
         return($total_users);
     }
 

@@ -5,6 +5,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 	<meta charset="utf-8">
 	<title>OGSteam Stats</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
 	<link rel="stylesheet" href="./mdl/material.min.css">
 	<script src="./mdl/material.min.js"></script>
 	<link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
@@ -35,6 +37,62 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	}
 	</style>
+    <script>
+        $(function () {
+            $('#php_versions_container').highcharts({
+                chart: {
+                    type: 'pie'
+                },
+                title: {
+                    text: 'PHP Versions'
+                },
+                series: [{
+                    name: 'PHP',
+                    data: [<?php echo $php_versions; ?>]
+                }]
+            });
+        });
+        $(function () {
+            $('#ogspy_versions_container').highcharts({
+                chart: {
+                    type: 'pie'
+                },
+                title: {
+                    text: 'OGSpy Versions'
+                },
+                series: [{
+                    name: 'OGSpy',
+                    data: [<?php echo $ogspy_versions; ?>]
+                }]
+            });
+        });        $(function () {
+            $('#ogspy_uni_container').highcharts({
+                chart: {
+                    type: 'pie'
+                },
+                title: {
+                    text: 'OGSpy Univers'
+                },
+                series: [{
+                    name: 'OGSpy',
+                    data: [<?php echo $ogspy_uni; ?>]
+                }]
+            });
+        });        $(function () {
+            $('#ogspy_pays_container').highcharts({
+                chart: {
+                    type: 'pie'
+                },
+                title: {
+                    text: 'OGSpy Pays Univers'
+                },
+                series: [{
+                    name: 'OGSpy',
+                    data: [<?php echo $ogspy_pays; ?>]
+                }]
+            });
+        });
+    </script>
 </head>
 <body>
 <!-- Simple header with fixed tabs. -->
@@ -61,6 +119,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <p>Voici les dernières statistiques d'utilisation d'OGSpy:</p>
                 <code>Nombre d'utilisateurs: <?php echo $nb_users;?></code>
                 <code>Nombre de serveurs: <?php echo $nb_servers;?></code>
+                <div id="charts">
+                    <table>
+                        <tr>
+                            <td><span id="php_versions_container" style="width:20%; height:400px;"></span></td>
+                            <td><span id="ogspy_versions_container" style="width:20%; height:400px;"></span></td>
+                            <td><span id="ogspy_uni_container" style="width:20%; height:400px;"></span></td>
+                            <td><span id="ogspy_pays_container" style="width:20%; height:400px;"></span></td>
+
+                        </tr>
+
+                    </table>
+
+                </div>
 
             <p class="footer">Page générée en <strong>{elapsed_time}</strong> secondes. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
         </section>
@@ -74,5 +145,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </section>
     </main>
 </div>
+
+
 </body>
 </html>
