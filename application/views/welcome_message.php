@@ -71,10 +71,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     type: 'pie'
                 },
                 title: {
-                    text: 'OGSpy Univers'
+                    text: 'Univers OGSpy'
                 },
                 series: [{
-                    name: 'OGSpy',
+                    name: 'Univers',
                     data: [<?php echo $ogspy_uni; ?>]
                 }]
             });
@@ -84,10 +84,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     type: 'pie'
                 },
                 title: {
-                    text: 'OGSpy Pays Univers'
+                    text: 'OGSpy Pays'
                 },
                 series: [{
-                    name: 'OGSpy',
+                    name: 'Pays',
                     data: [<?php echo $ogspy_pays; ?>]
                 }]
             });
