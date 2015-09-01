@@ -28,6 +28,7 @@ class Collector extends CI_Controller {
         $php_version = $this->input->get('php_version', TRUE);
         $og_uni = $this->input->get('og_uni', TRUE);
         $og_pays = $this->input->get('og_pays', TRUE);
+        $mod_list = json_decode($this->input->get('mod_list', TRUE));
 
         if($this->ogspystats_model->is_server_present($ogspy_key) > 0){
 
@@ -37,7 +38,10 @@ class Collector extends CI_Controller {
             $this->ogspystats_model->insert_entry($ogspy_key,$version,$ogspy_since,$nb_users,$db_size,$php_version,$og_uni,$og_pays);
         }
 
-        //echo($ogspy_index);
-		//$this->load->view('welcome_message');
+    foreach($mod_list as $mod){
+
+        log_message('debug','Mod installé: '. $mod);
+    }
+
 	}
 }
