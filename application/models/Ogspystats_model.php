@@ -22,6 +22,13 @@ class Ogspystats_model extends CI_Model {
         return $query->result();
     }
 
+    public function get_ogspy_id($ogspy_key)
+    {
+        $query = $this->db->select('id')->from('ogspy')->where('ogspy_key', $ogspy_key)->get();
+        $row = $query->row();
+        return $row->id;
+    }
+
     public function get_php_versions(){
         $query = $this->db->select('php_version')->get('ogspy');
 
@@ -86,9 +93,29 @@ class Ogspystats_model extends CI_Model {
         return($total_users);
     }
 
+    /**
+     * @param $ogspy_key
+     * @param $version
+     * @param $ogspy_since
+     * @param $nb_users
+     * @param $db_size
+     * @param $php_version
+     * @param $og_uni
+     * @param $og_pays
+     */
+    public function update_ogspy_data($ogspy_key, $version,$ogspy_since,$nb_users,$db_size,$php_version,$og_uni,$og_pays){
 
+        if($this->is_server_present($ogspy_key) > 0){
 
-    public function insert_entry($ogspy_key, $version,$ogspy_since,$nb_users,$db_size,$php_version,$og_uni,$og_pays)
+            $this->update_entry($ogspy_key,$version,$ogspy_since,$nb_users,$db_size,$php_version,$og_uni,$og_pays);
+
+        }else{
+            $this->insert_entry($ogspy_key,$version,$ogspy_since,$nb_users,$db_size,$php_version,$og_uni,$og_pays);
+        }
+
+    }
+
+    private function insert_entry($ogspy_key, $version,$ogspy_since,$nb_users,$db_size,$php_version,$og_uni,$og_pays)
     {
         log_message('debug','Enter in function insert_entry');
         $data = array('ogspy_key' => $ogspy_key,
@@ -105,7 +132,7 @@ class Ogspystats_model extends CI_Model {
         $str = $this->db->insert('ogspy', $data);
     }
 
-    public function update_entry($ogspy_key, $version,$ogspy_since,$nb_users,$db_size,$php_version,$og_uni,$og_pays)
+    private function update_entry($ogspy_key, $version,$ogspy_since,$nb_users,$db_size,$php_version,$og_uni,$og_pays)
     {
         log_message('debug','Enter in function update_entry');
         $data = array('ogspy_key' => $ogspy_key,
@@ -124,7 +151,7 @@ class Ogspystats_model extends CI_Model {
 
     }
 
-    public function is_server_present($ogspy_key){
+    private function is_server_present($ogspy_key){
 
         log_message('debug','Enter in function is_server_present: '. $ogspy_key);
         $this->db->where('ogspy_key', $ogspy_key);

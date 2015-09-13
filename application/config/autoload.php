@@ -127,3 +127,4 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 */
 
+$autoload['model'] = array('ogspystats_model','ogspy_mods_stats_model');
