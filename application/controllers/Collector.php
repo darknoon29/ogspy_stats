@@ -31,6 +31,8 @@ class Collector extends CI_Controller {
         $mod_list = json_decode($this->input->get('mod_list', TRUE));
 
         $this->ogspystats_model->update_ogspy_data($ogspy_key,$version,$ogspy_since,$nb_users,$db_size,$php_version,$og_uni,$og_pays);
-        $this->ogspy_mods_stats_model->update_mod_data($ogspy_key, $mod_list);
+        if(isset($mod_list)){
+            $this->ogspy_mods_stats_model->update_mod_data($ogspy_key, $mod_list);
+        }
 	}
 }
