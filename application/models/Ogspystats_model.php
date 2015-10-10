@@ -87,7 +87,6 @@ class Ogspystats_model extends CI_Model {
 
         foreach ($query->result() as $row)
         {
-
             $total_users += $row->nb_users;
         }
         return($total_users);

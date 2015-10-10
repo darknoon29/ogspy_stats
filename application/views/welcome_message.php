@@ -92,6 +92,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 }]
             });
         });
+        $(function () {
+            $('#ogspy_mod_rank_container').highcharts({
+                chart: {
+                    type: 'bar'
+                },
+                title: {
+                    text: 'Classement Modules'
+                },
+                xAxis: {
+                    categories: <?php echo $ogspy_mod_rank_name; ?>
+                },
+                series: [{
+                    name: 'Nombre installations',
+                    data: <?php echo $ogspy_mod_rank_values; ?>
+                }]
+            });
+        });
     </script>
 </head>
 <body>
@@ -133,16 +150,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                 </div>
 
-            <p class="footer">Page générée en <strong>{elapsed_time}</strong> secondes. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
         </section>
         <section class="mdl-layout__tab-panel" id="fixed-tab-2">
             <div class="page-content">
-                <p>Section à venir</p>
+                <div id="charts_mod">
+                    <table>
+                        <tr>
+                            <td><span id="ogspy_mod_rank_container" style="width:100%; height:800px;"></span></td>
+                        </tr>
+                    </table>
+
+                </div>
             </div>
         </section>
         <section class="mdl-layout__tab-panel" id="fixed-tab-3">
             <div class="page-content"><!-- Your content goes here --></div>
         </section>
+        <p class="footer">Page générée en <strong>{elapsed_time}</strong> secondes. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
     </main>
 </div>
 
