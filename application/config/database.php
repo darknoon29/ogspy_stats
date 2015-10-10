@@ -73,10 +73,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 if($_SERVER['SERVER_NAME'] == '127.0.0.1')
 {
 	$active_group = 'debug';
-	log_message('info',"Utilisation de la base de données Localhost");
+	log_message('info',"Utilisation de la base de donnÃ©es Localhost");
 }else{
 	$active_group = 'production';
-    log_message('info',"Utilisation de la base de données Production");
+    log_message('info',"Utilisation de la base de donnÃ©es Production");
 }
 
 $query_builder = TRUE;
