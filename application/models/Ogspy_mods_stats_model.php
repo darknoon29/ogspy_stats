@@ -16,12 +16,30 @@ class Ogspy_mods_stats_model extends CI_Model {
         parent::__construct();
     }
 
+    public function get_mod_rank(){
+
+        log_message('debug','Enter in function get_mod_rank');
+
+        $this->db->select('modules.name, COUNT(*)nombre');
+        $this->db->from('ogspy_has_modules');
+        $this->db->join('modules', 'ogspy_has_modules.module_id = modules.id');
+        $this->db->group_by('module_id');
+        $this->db->order_by('nombre', 'DESC');
+        $query = $this->db->get();
+
+        foreach ($query->result() as $row) {
+            $mod_vresult[$row->name] = $row->nombre;
+        }
+        return $mod_vresult;
+    }
+
+
     public function update_mod_data($ogspy_key, $mod_list)
     {
         log_message('debug','Enter in function update_mod_data');
         $ogspy_id = $this->ogspystats_model->get_ogspy_id($ogspy_key);
         log_message('debug','OGSpy_id='.$ogspy_id);
-        //Début transaction
+        //DÃ©but transaction
         $this->clean_ogspy_mods($ogspy_id);
 
         foreach($mod_list as $mod){
@@ -37,7 +55,7 @@ class Ogspy_mods_stats_model extends CI_Model {
     }
 
     private function insert_mod($ogspy_id,$mod){
-        //Vérification que le Mod existe dans la base
+        //VÃ©rification que le Mod existe dans la base
         $mod_id = $this->get_mod_id($mod);
 
        if( -1 == $mod_id){
