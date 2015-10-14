@@ -164,9 +164,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section>
         <section class="mdl-layout__tab-panel" id="fixed-tab-3">
-            <div class="page-content"><!-- Your content goes here --></div>
+            <div class="page-content">Ce site est destinée à forunir des informations à l'équipe OGSteam.<br>
+            Si vous souhaitez nous contacter, nous sommes disponibles sur le Forum : <a href="http://www.ogsteam.fr">Forum OGSteam</a><br><br>
+            Site réalisé par DarkNoon.
+            </div>
         </section>
-        <p class="footer">Page générée en <strong>{elapsed_time}</strong> secondes. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
+        <p class="footer">Page générée en <strong>{elapsed_time}</strong> secondes. <?php echo  (ENVIRONMENT === 'development') ?  'Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
     </main>
 </div>
 
