@@ -5,8 +5,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 	<meta charset="utf-8">
 	<title>OGSteam Stats</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
 	<link rel="stylesheet" href="./mdl/material.min.css">
 	<script src="./mdl/material.min.js"></script>
 	<link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
@@ -165,11 +165,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </section>
         <section class="mdl-layout__tab-panel" id="fixed-tab-3">
             <div class="page-content">Ce site est destinée à forunir des informations à l'équipe OGSteam.<br>
-            Si vous souhaitez nous contacter, nous sommes disponibles sur le Forum : <a href="http://www.ogsteam.fr">Forum OGSteam</a><br><br>
+            Si vous souhaitez nous contacter, nous sommes disponibles sur le Forum : <a href="https://www.ogsteam.fr">Forum OGSteam</a><br><br>
             Site réalisé par DarkNoon.
             </div>
         </section>
-        <p class="footer">Page générée en <strong>{elapsed_time}</strong> secondes. <?php echo  (ENVIRONMENT === 'development') ?  'Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
+        <p class="footer">By DarkNoon</p>
     </main>
 </div>
 
