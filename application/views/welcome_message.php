@@ -7,8 +7,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<title>OGSteam Stats</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
-	<link rel="stylesheet" href="./mdl/material.min.css">
-	<script src="./mdl/material.min.js"></script>
+	<link rel="stylesheet" href="./node_modules/material-design-lite/material.min.css">
+	<script src="./node_modules/material-design-lite/material.min.js"></script>
 	<link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
 	<style type="text/css">
 
