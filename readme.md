@@ -21,8 +21,9 @@ Fichiers à déposer sur un serveur PHP.
 
 Et la configuration de la BDD à faire dans le dossier application/config/database.php
 
-### Site
+---
 
+### Site
 Le site est disponible à cette addresse : http://darkcity.fr/statistiques/
 
 ---
@@ -51,4 +52,4 @@ Nous suivons le traditionnel GitFlow :
 ---
 ## License
 
-Le projet est diffusé sous la license **GPLV2**.
+Le projet est diffusé sous la license **GPLV3**.
