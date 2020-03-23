@@ -21,6 +21,9 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 
+		// Maintenance
+
+		$this->ogspystats_model->maintenance();
 
         $ogspy_users = $this->ogspystats_model->get_total_users();
         $ogspy_servers = $this->ogspystats_model->get_total_servers();
@@ -57,10 +60,10 @@ class Welcome extends CI_Controller {
 	}
 
     private function convert_to_highcharts_pie($data_to_convert){
-        $temp = "";
+        $temp = array() ;
         foreach($data_to_convert as $key => $value){
 
-             $temp[]= "['" . $key . "'," . $value . " ]";
+             $temp[$key] = "['" . $key . "'," . $value . " ]";
         }
         // format hightchart
         $hc_table = implode(" , ", $temp);
