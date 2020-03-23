@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |				'ssl_ca'     - Path to the certificate authority file
 |				'ssl_capath' - Path to a directory containing trusted CA certificates in PEM format
 |				'ssl_cipher' - List of *allowed* ciphers to be used for the encryption, separated by colons (':')
-|				'ssl_verify' - TRUE/FALSE; Whether verify the server certificate or not ('mysqli' only)
+|				'ssl_verify' - TRUE/FALSE; Whether verify the server certificate or not
 |
 |	['compress'] Whether or not to use client compression (MySQL only)
 |	['stricton'] TRUE/FALSE - forces 'Strict Mode' connections
@@ -70,7 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $query_builder variables lets you determine whether or not to load
 | the query builder class.
 */
-if($_SERVER['SERVER_NAME'] == '127.0.0.1')
+if($_SERVER['SERVER_NAME'] === 'localhost')
 {
 	$active_group = 'debug';
 	log_message('info',"Utilisation de la base de données Localhost");
@@ -85,8 +85,8 @@ $db['debug'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'root',
-	'password' => 'root',
-	'database' => 'ogs_stats',
+	'password' => 'password',
+	'database' => 'ostats',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => 'ostats_',
 	'pconnect' => FALSE,
