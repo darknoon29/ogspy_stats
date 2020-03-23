@@ -159,4 +159,12 @@ class Ogspystats_model extends CI_Model {
         return $results;
       }
 
+      public function maintenance () {
+    	  $last_year = time() - (3600 * 24 * 365);
+		  log_message('debug','lastseen: '. $last_year);
+		  $this->db->where('last_seen <',  $last_year);
+		  $this->db->delete('ogspy');
+
+	  }
+
 }
