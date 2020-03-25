@@ -20,7 +20,6 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-
 		// Maintenance
 
 		$this->ogspystats_model->maintenance();
@@ -74,8 +73,8 @@ class Welcome extends CI_Controller {
 
         foreach($data_to_convert as $key => $value){
 
-            $value_name_array [] = "'" .$key. "'";
-            $value_list_array []= $value;
+            $value_name_array [$key] = "'" .$key. "'";
+            $value_list_array [$key] = $value;
         }
         $value_name ="[".implode(" , ", $value_name_array)."]";
         $value_list ="[".implode(" , ", $value_list_array)."]";
