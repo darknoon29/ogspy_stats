@@ -35,4 +35,11 @@ class Collector extends CI_Controller {
             $this->ogspy_mods_stats_model->update_mod_data($ogspy_key, $mod_list);
         }
 	}
+
+	public function repolistkey()
+	{
+		set_status_header(200);
+		echo '';
+		//return $this->respond($data, 200);
+	}
 }
