@@ -5,8 +5,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 	<meta charset="utf-8">
 	<title>OGSteam Stats</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/highcharts/highcharts.js"></script>
 	<link rel="stylesheet" href="./node_modules/material-design-lite/material.min.css">
 	<script src="./node_modules/material-design-lite/material.min.js"></script>
 	<link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
@@ -41,7 +41,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         $(function () {
             $('#php_versions_container').highcharts({
                 chart: {
-                    type: 'pie'
+                    type: 'pie',
+					height: 400
                 },
                 title: {
                     text: 'PHP Versions'
@@ -50,12 +51,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     name: 'PHP',
                     data: [<?php echo $php_versions; ?>]
                 }]
+				
             });
         });
         $(function () {
             $('#ogspy_versions_container').highcharts({
                 chart: {
-                    type: 'pie'
+                    type: 'pie',
+					height: 400
                 },
                 title: {
                     text: 'OGSpy Versions'
@@ -68,7 +71,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         });        $(function () {
             $('#ogspy_uni_container').highcharts({
                 chart: {
-                    type: 'pie'
+                    type: 'pie',
+					height: 400
                 },
                 title: {
                     text: 'Univers OGSpy'
@@ -81,7 +85,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         });        $(function () {
             $('#ogspy_pays_container').highcharts({
                 chart: {
-                    type: 'pie'
+                    type: 'pie',
+					height: 400
                 },
                 title: {
                     text: 'OGSpy Pays'
@@ -95,7 +100,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         $(function () {
             $('#ogspy_mod_rank_container').highcharts({
                 chart: {
-                    type: 'bar'
+                    type: 'bar',
+					height: 800,
+					width : 1200
                 },
                 title: {
                     text: 'Classement Modules'
@@ -139,11 +146,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div id="charts">
                     <table>
                         <tr>
-                            <td><span id="php_versions_container" style="width:20%; height:400px;"></span></td>
-                            <td><span id="ogspy_versions_container" style="width:20%; height:400px;"></span></td>
-                            <td><span id="ogspy_uni_container" style="width:20%; height:400px;"></span></td>
-                            <td><span id="ogspy_pays_container" style="width:20%; height:400px;"></span></td>
-
+                            <td><span id="php_versions_container"></span></td>
+                            <td><span id="ogspy_versions_container"></span></td>
+                            <td><span id="ogspy_uni_container"></span></td>
+                            <td><span id="ogspy_pays_container"></span></td>
                         </tr>
 
                     </table>
@@ -165,7 +171,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </section>
         <section class="mdl-layout__tab-panel" id="fixed-tab-3">
             <div class="page-content">Ce site est destinée à forunir des informations à l'équipe OGSteam.<br>
-            Si vous souhaitez nous contacter, nous sommes disponibles sur le Forum : <a href="https://www.ogsteam.fr">Forum OGSteam</a><br><br>
+            Si vous souhaitez nous contacter, nous sommes disponibles sur le Forum : <a href="https://www.ogsteam.eu">Forum OGSteam</a><br><br>
             Site réalisé par DarkNoon.
             </div>
         </section>

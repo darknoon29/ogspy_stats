@@ -4,7 +4,7 @@ OGSpy Statistics
 
 Site Web basé sur Codeigniter pour afficher les statistiques d'OGSpy et de ses modules.
 
-Visitez notre forum [OGSteam.fr](https://forum.ogsteam.fr) pour en savoir plus.
+Visitez notre forum [OGSteam.fr](https://forum.ogsteam.eu) pour en savoir plus.
 
 ---
 
